@@ -6,6 +6,8 @@ For example, an input row with a date field with content `YYYY-MM-dd HH:mm:ss` w
 
 Once the data is partitioned, it can be mapped into an [Impala](https://www.cloudera.com/products/apache-hadoop/impala.html) table, in such that it can be queried with schema-on-read mapping to be visualized on map.
 
+![](media/HeaderMap.png)
+
 ## Building The Project
 
 This project depends on:
@@ -17,7 +19,7 @@ This project depends on:
 Build the project using [Maven](https://maven.apache.org/):
 
 ```bash
-mvn package
+mvn -P quickstart package
 ```
 
 ## Run The Project

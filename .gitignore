@@ -2,3 +2,4 @@
 target/
 *.iml
 src/main/python/*.xml
+dependency-reduced-pom.xml
