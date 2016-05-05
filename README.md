@@ -65,7 +65,7 @@ The latter are used to spatially bin the data in addition to the temporal binnin
 ## Querying The Data
 
 The partitioned data is mapped to an [Impala](https://www.cloudera.com/products/apache-hadoop/impala.html) table to be queried (Check out the `Data Unit` section in [this](https://cwiki.apache.org/confluence/display/Hive/Tutorial) tutorial for more details on the defintion of partition).
-The following is the content of the mapping file `create-table.hql`:
+The following is the content of the mapping file `create-table-trips.hql`:
 
 ```sql
 drop table if exists trips;
@@ -99,7 +99,7 @@ alter table trips add if not exists partition (year=2013,month=01,day=01,hour=01
 Merge the two files and create the table:
 
 ```bash
-cat create-table.hql /tmp/alter-table.hql > /tmp/tmp.hql
+cat create-table-trips.hql /tmp/alter-table.hql > /tmp/tmp.hql
 impala-shell --quiet -f /tmp/tmp.hql
 ```
 
@@ -175,3 +175,9 @@ group by rc100
 * Show how to start a [Docker Cloudera Quickstart](https://blog.cloudera.com/blog/2015/12/docker-is-the-new-quickstart-option-for-apache-hadoop-and-cloudera/).
 * Show how to use SparkSQL and [ThriftServer2](http://spark.apache.org/docs/latest/sql-programming-guide.html#running-the-thrift-jdbcodbc-server).
 * Convert output to [Parquet](http://parquet.apache.org/) format.
+
+
+#### References
+
+* <http://blog.cloudera.com/blog/2014/05/how-to-convert-existing-data-into-parquet/>
+

@@ -13,3 +13,6 @@ spark-submit\
  --executor-memory 2G\
  target/spark-multi-output-0.1.jar\
  trips hdfs:///trips /tmp/alter-table.hql
+
+cat create-table-trips.hql /tmp/alter-table.hql > /tmp/tmp.hql
+impala-shell --quiet -f /tmp/tmp.hql
